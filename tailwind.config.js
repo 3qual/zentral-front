@@ -6,11 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        text: 'var(--text)',
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        accent: 'var(--accent)',
+        white: '#faf9f6',
+        black: '#000',
+        red: '#ff595e',
+        yellow: '#ffca3a',
+        green: '#8ac926',
+        blue: '#1982c4',
+        purple: '#6a4c93',
       }
     },
   },
