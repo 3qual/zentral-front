@@ -1,6 +1,6 @@
 import ThemedScreenView from '@/components/ThemedScreenView';
 
-export default function DashboardScreen() {
+export default function SettingsScreen() {
   return (
     <ThemedScreenView> </ThemedScreenView>
   );
