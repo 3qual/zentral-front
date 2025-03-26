@@ -1,4 +1,4 @@
-import { SafeAreaView, ViewProps } from "react-native";
+import { SafeAreaView, View, ViewProps } from "react-native";
 import { twMerge } from "tailwind-merge";
 
 type ThemedScreenViewProps = ViewProps & {
@@ -6,11 +6,14 @@ type ThemedScreenViewProps = ViewProps & {
 };
 
 export default function ThemedScreenView({ className, ...rest }: ThemedScreenViewProps) {
-  const defaultStyles = 'bg-white dark:bg-black px-4 flex-1';
+  const containerStyles = 'dark:bg-black flex-1';
+  const contentStyles = 'px-4 flex-1';
+  
   return (
-    <SafeAreaView className={twMerge(
-      defaultStyles,
-      className
-    )} {...rest} />
+    <SafeAreaView className={twMerge(containerStyles)} {...rest}>
+      <View className={twMerge(contentStyles, className)}>
+        {rest.children}
+      </View>
+    </SafeAreaView>
   )
 }
