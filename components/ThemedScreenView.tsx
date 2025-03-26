@@ -6,7 +6,7 @@ type ThemedScreenViewProps = ViewProps & {
 };
 
 export default function ThemedScreenView({ className, ...rest }: ThemedScreenViewProps) {
-  const defaultStyles = 'bg-white dark:bg-black mx-4 flex-1';
+  const defaultStyles = 'bg-white dark:bg-black px-4 flex-1';
   return (
     <SafeAreaView className={twMerge(
       defaultStyles,
