@@ -6,7 +6,7 @@ type ThemedScreenViewProps = ViewProps & {
 };
 
 export default function ThemedScreenView({ className, ...rest }: ThemedScreenViewProps) {
-  const containerStyles = 'dark:bg-black flex-1';
+  const containerStyles = 'bg-white dark:bg-black flex-1';
   const contentStyles = 'px-4 flex-1';
   
   return (
