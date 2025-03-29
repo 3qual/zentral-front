@@ -1,6 +1,6 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { View } from 'react-native';
+import { Tabs, useRouter } from 'expo-router';
+import React, { SVGProps, useEffect, useRef, useState } from 'react';
+import { Animated, Easing, TouchableOpacity, View } from 'react-native';
 import { HapticTab } from '@/components/HapticTab';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import ThemedView from '@/components/ThemedView';
@@ -10,6 +10,8 @@ import Plus from '@/assets/icons/plus.svg';
 import Folder from '@/assets/icons/folder.svg';
 import Settings from '@/assets/icons/settings.svg';
 import ThemedIcon from '@/components/ThemedIcon';
+import Camera from '@/assets/icons/camera.svg';
+
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -58,16 +60,16 @@ export default function TabLayout() {
         name="camera"
         options={{
           title: '',
-          tabBarIcon: () => (
-            <View className="w-[60px] h-[60px] rounded-full bg-black dark:bg-white items-center justify-center -mt-6">
-              <ThemedIcon 
-                Icon={Plus} 
-                focused={false} 
-                invertColors={true} 
-                aria-label='Camera'
-              />
-            </View>
-          ),
+          tabBarIcon: ({ focused }) => (
+            <Animated.View 
+              style={{
+                opacity: focused ? 0 : 1,
+              }}
+              className="w-[60px] h-[60px] rounded-full bg-black dark:bg-white items-center justify-center -mt-6"
+            >
+              <ThemedIcon Icon={Plus} focused={focused} invertColors={true} aria-label="Camera" />
+            </Animated.View>
+          )
         }}
       />
       <Tabs.Screen
