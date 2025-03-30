@@ -4,7 +4,7 @@ import { Transaction, TransactionCreateInput } from "@/types/transactions/Transa
 
 export const transactionsApi = {
   async createTransaction(transaction: TransactionCreateInput): Promise<ApiResult<Transaction>> {
-    const response = await fetch(`${API.transactions}`, {
+    const response = await fetch(`${API.transactions.CREATE}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
